@@ -47,7 +47,10 @@ while(boolean):
         DataBase.modificaApp(nombre, 7)
         print ("gracias por el comentario")
     if(option =="6"):
-        print("aun no")
+        appVal = input("Introduce el nombre de la aplicacion")
+        nuevaVal = input("Introduce tu valoración")
+        Database.estrellas(appval,nuevaVal)
+
     if(option == "7"):
         nombreApp = input("Introduce el nombre de la aplicacion")
         DataBase.calcularingresado(nombreApp)

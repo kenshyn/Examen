@@ -58,6 +58,24 @@ class DataBase:
                     if(item != ''):
                         accounts.write(item)
 
+    def modificaAppEstrellas(self, nombre, numerocambio):
+        appList = []
+        ibanExists = False
+        with open(self.ruta, 'r') as accounts:
+            for line in accounts:
+                app = line.split(",")
+                if(app[0] == nombre):
+                    app[5] = str(float(app[5]) + 1)
+                    app[6] = numerocambio
+                    changedLine = ','.join(app)
+                    appList.append(changedLine)
+                else:
+                    appList.append(line)
+            with open(self.ruta, 'w') as accounts:
+                for item in appList:
+                    if(item != ''):
+                        accounts.write(item)
+
     def llegeixAppsperProveedor(self,varllista):
         i=0
         listavar=list()
@@ -86,3 +104,16 @@ class DataBase:
                 else:
                     dinero=float(llistaresultat[3])*float(llistaresultat[4])
                     print(llistaresultat[0]+" ha ingresado un total de: "+str(dinero)+"€")
+    def estrellas(self,nombreApp, nuevaVal):
+        i=0
+        listavar=list()
+        with open(self.ruta, 'r') as f:
+          for line in f:
+            llistaresultat = line.split(",")
+            if(llistaresultat[0] == nombreApp):
+                floatnumpunt=float(llistaresultat[5])
+                floatpuntant=float(llistaresultat[6])
+                floatnuevapunt=float(nuevaVal)
+                punt=(floatnumpunt*floatpuntant+floatnuevapunt)/floatnumpunt+1
+                print("la nueva valoración de la app: "+llistaresultat[0]+" es: "+str(punt))
+                self.modificaAppestrellas(nombreApp, punt)
