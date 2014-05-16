@@ -74,3 +74,15 @@ class DataBase:
         sorted(listavar, key=lambda App: listavar[0])
         for item in listavar:
             print (item[1])
+    def calcularingresado(self,nombreApp):
+        i=0
+        listavar=list()
+        with open(self.ruta, 'r') as f:
+          for line in f:
+            llistaresultat = line.split(",")
+            if(llistaresultat[0] == nombreApp):
+                if(llistaresultat[3]=="0"):
+                    print("esta aplicacion es gratuita, así que no ha generado dinero por descargas")
+                else:
+                    dinero=float(llistaresultat[3])*float(llistaresultat[4])
+                    print(llistaresultat[0]+" ha ingresado un total de: "+str(dinero)+"€")
