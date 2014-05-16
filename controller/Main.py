@@ -1,5 +1,9 @@
 __author__ = 'Victor'
 import datetime
+from DataBase import *
+import time
+
+DataBase = DataBase()
 
 print("Bienvenido a PeachStore!")
 print("Que quieres hacer?")
@@ -12,19 +16,23 @@ print("6.- Valorar la aplicacion")
 print("7.- Calcular el dinero generado por una aplicacion")
 print("8.- Listar las aplicaciones de un proveedor")
 option = input("Selecciona una opcion: ")
-if(option == 1):
+if(option == "1"):
     opcionlista= input("Introduce 0 para listar aplicaciones gratuitas y 1 para aplicaciones de pago")
-    milista=
-if(option == 2):
+#    milista=
+if(option == "2"):
     nombre = input("introduce el nombre de la app")
     proveedor = input("introduce su proveedor")
-    fecha = datetime.date.today()
+    #fecha = datetime.datetime.now()
+    #fecha.strftime("%B %d, %Y")
+## dd/mm/yyyy format
+    fecha= time.strftime("%d/%m/%Y")
+    print (fecha)
+    #fecha= input("Introduce la fecha de hoy")
     precio = input("introduce su precio")
     numdesc = 0
     numpunt= 0
     punt = 0
     numcoment = 0
-    DataBase = DataBase()
     result = DataBase.afegeixApp(nombre,proveedor,fecha,precio,numdesc,numpunt,punt,numcoment)
     if(result):
         print("App introducida correctamente")
