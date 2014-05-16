@@ -1,4 +1,4 @@
-Flappy Bird,NPI Entertainment,16/05/2014,0,0,0,0,0
+Flappy Bird,NPI Entertainment,16/05/2014,0,2.0,0,0,0
 Flappy Bord,yOKSE,16/05/2014,0,0,0,0,0
 flippy jurk,yOKSE,16/05/2014,10,0,0,0,0
 Final Fantasy Mobile,Square Enix,10/05/2014,10,0,0,0,0
