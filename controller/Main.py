@@ -42,7 +42,8 @@ if(option == "4"):
     print ("gracias por la descarga")
 if(option == "5"):
     nombre = input("Que aplicacion quieres comentar?")
-
+    DataBase.modificaApp(nombre, 7)
+    print ("gracias por el comentario")
 if(option =="6"):
     print("aun no")
 if(option == "7"):
