@@ -18,16 +18,12 @@ print("8.- Listar las aplicaciones de un proveedor")
 option = input("Selecciona una opcion: ")
 if(option == "1"):
     opcionlista= input("Introduce 0 para listar aplicaciones gratuitas y 1 para aplicaciones de pago")
-#    milista=
+    DataBase.llegeixApps(opcionlista)
 if(option == "2"):
     nombre = input("introduce el nombre de la app")
     proveedor = input("introduce su proveedor")
-    #fecha = datetime.datetime.now()
-    #fecha.strftime("%B %d, %Y")
-## dd/mm/yyyy format
     fecha= time.strftime("%d/%m/%Y")
     print (fecha)
-    #fecha= input("Introduce la fecha de hoy")
     precio = input("introduce su precio")
     numdesc = 0
     numpunt= 0
